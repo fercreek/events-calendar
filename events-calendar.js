@@ -20,6 +20,7 @@ Router.map(function(){
     });
 });
 
+// Client
 if (Meteor.isClient) {
 
   Template.home.events({
@@ -38,20 +39,19 @@ if (Meteor.isClient) {
     Session.set('superCalendarReady', true);
   });
 
-  SuperCalendar.events.onDayClick = function (event, template, data) {
-    console.log("meeh");
+  // SuperCalendar.events.onDayClick = function (event, template, data) {
+    // Calendar = new Meteor.Collection('calendar');
+  // };
+  SuperCalendar.events.onEventClick = function (event, template, data) {
+    // Calendar = new Meteor.Collection('calendar');
+    console.log(12);
   };
-  // Meteor.startup(function () {
-  //   if (Rooms.find().count() === 0) {
-  //     Rooms.insert({name: "Initial room"});
-  //   }
-  // });
 }
 
+// Server
 if (Meteor.isServer) {
   Meteor.publish('calendar', function () {
     return Calendar.find();
   });
-
 
 }
