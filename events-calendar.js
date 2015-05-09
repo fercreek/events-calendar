@@ -1,4 +1,8 @@
 Router.map(function(){
+    this.route('home', {
+      path: '/',
+    });
+
     this.route('test', {
       path: '/test',
       data: {
@@ -7,10 +11,19 @@ Router.map(function(){
       }
     });
 
-    this.route('home', {
-      path: '/home',
-      data: {
-          homes: "This is my home"
-      }
-    });
 });
+
+if (Meteor.isClient) {
+
+  Template.home.events({
+    'click .login': function(event){
+      Router.go('test');
+    }
+  });
+
+  // Meteor.startup(function () {
+  //   if (Rooms.find().count() === 0) {
+  //     Rooms.insert({name: "Initial room"});
+  //   }
+  // });
+}
