@@ -15,13 +15,22 @@ Router.map(function(){
       path: '/calendary',
     });
 
+    this.route('main', {
+      path: '/main',
+    });
 });
 
 if (Meteor.isClient) {
 
   Template.home.events({
     'click .login': function(event){
-      Router.go('test');
+      Router.go('main');
+    }
+  });
+
+  Template.main.events({
+    'click .calendar': function(event){
+      Router.go('calendary');
     }
   });
 
