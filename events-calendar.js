@@ -11,6 +11,10 @@ Router.map(function(){
       }
     });
 
+    this.route('calendary', {
+      path: '/calendary',
+    });
+
 });
 
 if (Meteor.isClient) {
@@ -21,9 +25,24 @@ if (Meteor.isClient) {
     }
   });
 
+  Meteor.subscribe('calendar', function () {
+    Session.set('superCalendarReady', true);
+  });
+
+  SuperCalendar.events.onDayClick = function (event, template, data) {
+    console.log("meeh");
+  };
   // Meteor.startup(function () {
   //   if (Rooms.find().count() === 0) {
   //     Rooms.insert({name: "Initial room"});
   //   }
   // });
+}
+
+if (Meteor.isServer) {
+  Meteor.publish('calendar', function () {
+    return Calendar.find();
+  });
+
+
 }
