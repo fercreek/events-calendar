@@ -1,15 +1,15 @@
 <head>
   <title>Calendario</title>
 </head>
-
 <body>
+  hola
 
 </body>
 
-<template name="hello">
+<!-- <template name="hello">
   <button>Click Me</button>
   <p>You've pressed the button {{counter}} times.</p>
-</template>
+</template> -->
 
 <template name="test">
   <p>This is a test.</p>
@@ -51,9 +51,28 @@
   </div>
 </template>
 
+<template name="providers">
+  {{asd}}
+  <!-- <ul>
+    {{#each tasks}}
+      {{task}}
+    {{/each}}
+  </ul> -->
+  <div class="container">
+    <h1>Proveedores</h1>
+    <!-- <p id="providers">No hay proveedores</p> -->
+
+  </div>
+
+</template>
+
+<template name="task">
+  <li>{{text}}</li>
+</template>
+
 <template name="main">
   <h1>Organizador de eventos</h1>
   <button class="calendar">Calendar</button>
   <button class="separado">Formato de Separado</button>
-  <button class="proveedores">Proveedores</button>
+  <button class="providers">Proveedores</button>
 </template>
