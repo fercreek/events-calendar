@@ -8,4 +8,8 @@ if (Meteor.isServer) {
     return Providers.find();
   });
 
+  Meteor.publish('theTasks', function () {
+    return Tasks.find();
+  });
+
 }

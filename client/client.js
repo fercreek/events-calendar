@@ -1,9 +1,10 @@
 // Client
 if (Meteor.isClient) {
   Meteor.startup(function() {
-    Providers = new Mongo.Collection("providers");
 
     Meteor.subscribe('providers');
+    Meteor.subscribe('tasks');
+
   });
 
   // Myvars = new Mongo.Collection("myvars");
@@ -57,6 +58,7 @@ if (Meteor.isClient) {
   });
 
   Meteor.subscribe('theProviders');
+  Meteor.subscribe('theTasks');
 
 
 
