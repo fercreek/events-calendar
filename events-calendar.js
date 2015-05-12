@@ -20,8 +20,15 @@ Router.map(function(){
     });
 });
 
+
+
 // Client
 if (Meteor.isClient) {
+  // console.log(Calendar.find().collection);
+
+  var dynamicId = "";
+  Template.calendary.name = "";
+  // console.log(calendar);
 
   Template.home.events({
     'click .login': function(event){
@@ -39,14 +46,24 @@ if (Meteor.isClient) {
     Session.set('superCalendarReady', true);
   });
 
-  // SuperCalendar.events.onDayClick = function (event, template, data) {
-    // Calendar = new Meteor.Collection('calendar');
-  // };
+
+  var dynamicId = "";
+
   SuperCalendar.events.onEventClick = function (event, template, data) {
-    // Calendar = new Meteor.Collection('calendar');
-    console.log(12);
+    console.log(data.date);
+    // console.log(Meteor.Collection("calendar")):
+    var eventDay = data.date;
+    var name = document.getElementById('name').value;
+    $('#name').val(eventDay.title);
+
+    Template.calendary.name = function(){
+      return dynamicId;
+    };
+
   };
 }
+
+
 
 // Server
 if (Meteor.isServer) {
