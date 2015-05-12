@@ -18,13 +18,35 @@
 </template>
 
 <template name="home">
+  <p>User</p>
+  <input type="text">
+  <p>Password</p>
+  <input type="password">
   <button class="login">Enter</button>
 </template>
 
 <template name="calendary">
-  <div class="size">
-    {{> calendar }}
-    <input type="text"/>
+  <div class="row">
+    <div class="col-md-8"> {{> calendar }} </div>
+    <div class="col-md-4">
+      <h2>Alta de evento</h2>
+      <p>Nombre</p>
+      <input type="text">
+      <p>Telefono</p>
+      <input type="text">
+      <p>Mail</p>
+      <input type="text">
+      <p>Tipo de evento</p>
+      <input type="text">
+      <p>Fecha de evento</p>
+      <input type="text">
+      <p>Hora</p>
+      <input type="text">
+      <p>Lugar</p>
+      <input type="text">
+      <p>Cant. invitados</p>
+      <input type="text">
+    </div>
   </div>
 </template>
 
