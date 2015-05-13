@@ -2,7 +2,6 @@
   <title>Calendario</title>
 </head>
 <body>
-  hola
 
 </body>
 
@@ -52,21 +51,36 @@
 </template>
 
 <template name="providers">
-  <!-- <ul>
-    {{#each tasks}}
-      {{task}}
-    {{/each}}
-  </ul> -->
   <div class="container">
     <h1>Proveedores</h1>
-    <!-- <p id="providers">No hay proveedores</p> -->
+    <table class="table">
+      <tr>
+        <td>Nombre</td>
+        <td>Empresa</td>
+        <td>Giro</td>
+        <td></td>
+      </tr>
+      {{#each providers}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{work}}</td>
+          <td>{{giro}}</td>
+          <td><button class="delete">Delete</button></td>
+        </tr>
+      {{/each}}
+    </table>
 
+    <!-- <form action="" class="new-provider"> -->
+      <input type="text" id="fullNameId" placeholder="Nombre Completo">
+      <input type="text" id="workId" placeholder="Empresa">
+      <input type="text" id="giroId" placeholder="Giro">
+      <button class="submit">Submit</button>
+    <!-- </form> -->
   </div>
-
 </template>
 
-<template name="task">
-  <li>{{text}}</li>
+<template name="example">
+  <li>{{name}}</li>
 </template>
 
 <template name="main">

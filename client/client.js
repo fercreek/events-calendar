@@ -7,31 +7,42 @@ if (Meteor.isClient) {
 
   });
 
-  // Myvars = new Mongo.Collection("myvars");
-
 
   var dynamicId = "";
   Template.calendary.name = "";
-//
-  // Providers = new Mongo.Collection("providers");
-  // console.log(Providers.find({}));
-  // console.log(Providers2.find({}));
 
-  Template.home.helpers({
+  Template.providers.events({
+    "click .submit": function () {
+      var fullNameId = document.getElementById('fullNameId').value;
+      var workId = document.getElementById('workId').value;
+      var giroId = document.getElementById('giroId').value;
 
-    home: function () {
-      return "hola";
-
-      // return Tasks.find({});
+      Providers.insert({
+        name: fullNameId,
+        work: workId,
+        giro: giroId,
+        createdAt: new Date() // current time
+      });
+      //
+      // // Clear form
+      // event.target.text.value = "";
+      //
+      // // Prevent default form submit
+      // return false;
     }
   });
 
-  // Template.providers.helpers({
-  //   providers: function(){
-  //     return Providers.find();
-  //   }
-  // });
+  Template.providers.events({
+    "click .delete": function(){
+      Providers.remove(this._id);
+    }
+  });
 
+  Template.providers.helpers({
+    providers: function(){
+      return Providers.find({});
+    }
+  });
 
   Template.home.events({
     'click .login': function(event){
