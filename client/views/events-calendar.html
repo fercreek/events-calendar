@@ -1,0 +1,60 @@
+<head>
+  <title>Calendario</title>
+</head>
+<body>
+
+</body>
+
+<!-- <template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template> -->
+
+<template name="test">
+  <p>This is a test.</p>
+  {{someValue}}
+  {{anotherValue}}
+</template>
+
+<template name="calendary">
+  <div class="row">
+    <div class="col-md-8"> {{> calendar }} </div>
+    <div class="col-md-4">
+      <h2>Alta de evento</h2>
+      <p>Nombre</p>
+      <input id="name" type="text" value="{{name}}" >
+      <!-- <p>Telefono</p>
+      <input type="text">
+      <p>Mail</p>
+      <input type="text">
+      <p>Tipo de evento</p>
+      <input type="text">
+      <p>Fecha de evento</p>
+      <input type="text">
+      <p>Hora</p>
+      <input type="text">
+      <p>Lugar</p>
+      <input type="text">
+      <p>Cant. invitados</p>
+      <input type="text"> -->
+      <button id="save">Guardar</button>
+    </div>
+  </div>
+</template>
+
+<template name="separate">
+  <div class="container">
+    <h1>Formato de separado</h1>
+  </div>
+</template>
+
+<template name="example">
+  <li>{{name}}</li>
+</template>
+
+<template name="main">
+  <h1>Organizador de eventos</h1>
+  <button class="calendar">Calendar</button>
+  <button class="separate">Formato de Separado</button>
+  <button class="providers">Proveedores</button>
+</template>

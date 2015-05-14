@@ -1,0 +1,28 @@
+<template name="providers">
+  <div class="container">
+    <h1>Proveedores</h1>
+    <table class="table">
+      <tr>
+        <td>Nombre</td>
+        <td>Empresa</td>
+        <td>Giro</td>
+        <td></td>
+      </tr>
+      {{#each providers}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{work}}</td>
+          <td>{{giro}}</td>
+          <td><button class="delete">Delete</button></td>
+        </tr>
+      {{/each}}
+    </table>
+
+      <input type="text" id="fullNameId" placeholder="Nombre Completo">
+      <input type="text" id="workId" placeholder="Empresa">
+      <input type="text" id="giroId" placeholder="Giro">
+      <button class="submit">Submit</button>
+
+      <button class="mainMenu">Main menu</button>
+  </div>
+</template>
