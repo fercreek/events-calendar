@@ -1,12 +1,14 @@
 <template name="providers">
+  <button class="left mainMenu inputText">Regresar</button>
   <div class="container">
     <h1>Proveedores</h1>
-    <table class="table">
+    <br>
+    <table class="table table-striped">
       <tr>
-        <td>Nombre</td>
-        <td>Empresa</td>
-        <td>Giro</td>
-        <td></td>
+        <td><h4>Nombre</h4></td>
+        <td><h4>Empresa</h4></td>
+        <td><h4>Giro</h4></td>
+        <td><h3></h3></td>
       </tr>
       {{#each providers}}
         <tr>
@@ -23,6 +25,6 @@
       <input type="text" class="inputText" id="giroId" placeholder="Giro">
       <button class="submit inputText">Submit</button>
 
-      <button class="mainMenu inputText">Main menu</button>
+      <!-- <button class="mainMenu inputText">Regresar</button> -->
   </div>
 </template>

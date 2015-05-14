@@ -39,6 +39,12 @@ if (Meteor.isClient) {
       }
     });
 
+  Template.calendary.events({
+      'click .left': function(event){
+          Router.go('main');
+      }
+    });
+
   Template.home.events({
       'click .loginbutton': function(event){
           Router.go('main');
@@ -80,16 +86,16 @@ if (Meteor.isClient) {
   Meteor.subscribe('theTasks');
 
 
-  SuperCalendar.events.onEventClick = function (event, template, data) {
-    console.log(data.date);
-    // console.log(Meteor.Collection("calendar")):
-    var eventDay = data.date;
-    var name = document.getElementById('name').value;
-    $('#name').val(eventDay.title);
+  // SuperCalendar.events.onEventClick = function (event, template, data) {
+  //   console.log(data.date);
+  //   // console.log(Meteor.Collection("calendar")):
+  //   var eventDay = data.date;
+  //   var name = document.getElementById('name').value;
+  //   $('#name').val(eventDay.title);
+  //
+  //   Template.calendary.name = function(){
+  //     return dynamicId;
+  //   };
+  // };
 
-    Template.calendary.name = function(){
-      return dynamicId;
-    };
-
-  };
 }
