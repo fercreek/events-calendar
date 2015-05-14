@@ -65,3 +65,7 @@ a{
 .loginbutton:hover{
 	background-color:#e5bf05;
 }
+
+.inputText{
+  color: black;
+}
