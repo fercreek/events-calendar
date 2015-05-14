@@ -27,13 +27,26 @@ if (Meteor.isClient) {
     }
   });
 
+  //Events
   Template.providers.events({
       "click .delete": function(){
           Providers.remove(this._id);
       }
     });
 
+  Template.separate.events({
+      "click .delete": function(){
+          Providers.remove(this._id);
+      }
+    });
+
   Template.providers.events({
+      'click .mainMenu': function(event){
+          Router.go('main');
+      }
+    });
+
+  Template.separate.events({
       'click .mainMenu': function(event){
           Router.go('main');
       }
@@ -77,6 +90,13 @@ if (Meteor.isClient) {
       }
     });
 
+    console.log(Calendar.find({}));
+
+  Template.separate.helpers({
+      calendar: function(){
+          return Calendar.find({});
+      }
+    });
 
   Meteor.subscribe('calendar', function () {
       Session.set('superCalendarReady', true);

@@ -1,46 +1,41 @@
-<head>
-  <title>Calendario</title>
-</head>
-<body>
-
-</body>
-
 <template name="calendary">
   <button class="left inputText">Regresar</button>
   <div class="row">
     <h2>Apartar fechas</h2>
     <div class="col-md-10"> {{> calendar }} </div>
-      <!-- <h2>Alta de evento</h2>
-      <p>Nombre</p>
-      <input id="name" type="text" value="{{name}}" > -->
-      <!-- <p>Telefono</p>
-      <input type="text">
-      <p>Mail</p>
-      <input type="text">
-      <p>Tipo de evento</p>
-      <input type="text">
-      <p>Fecha de evento</p>
-      <input type="text">
-      <p>Hora</p>
-      <input type="text">
-      <p>Lugar</p>
-      <input type="text">
-      <p>Cant. invitados</p>
-      <input type="text"> -->
-      <!-- <button id="save">Guardar</button> -->
   </div>
 </template>
 
 <template name="separate">
+  <button class="left mainMenu inputText">Regresar</button>
   <div class="container">
     <h1>Formato de separado</h1>
+    <br>
+    <table class="table table-striped">
+      <tr>
+        <td><h4>Evento</h4></td>
+        <td><h4>Fecha</h4></td>
+        <td><h4>Descripcion</h4></td>
+        <td><h3></h3></td>
+        <td><h3></h3></td>
+      </tr>
+      {{#each calendar}}
+        <tr>
+          <td>{{title}}</td>
+          <td>{{start}}</td>
+          <td>{{description}}</td>
+          <td><button class="edit inputText">Editar</button></td>
+          <td><button class="delete inputText">Borrar</button></td>
+        </tr>
+      {{/each}}
+    </table>
   </div>
 </template>
 
 <template name="main">
   <div class="container">
     <h1>Organizador de eventos</h1>
-    <button class="btn btn-primary calendar">Calendar</button>
+    <button class="btn btn-primary calendar">Apartar fechas</button>
     <button class="btn btn-primary separate">Formato de Separado</button>
     <button class="btn btn-primary providers">Proveedores</button>
   </div>
