@@ -2,7 +2,6 @@
 if (Meteor.isClient) {
   Meteor.startup(function() {
     Meteor.subscribe('providers');
-    Meteor.subscribe('tasks');
     Meteor.subscribe('clients');
   });
 
@@ -50,72 +49,71 @@ if (Meteor.isClient) {
       }
     });
 
-  Template.providers.events({
-      'click .mainMenu': function(event){
-          Router.go('main');
-      }
-    });
-
   Template.separate.events({
       "click .delete": function(){
           Providers.remove(this._id);
       }
     });
 
+  Template.client.events({
+      "click .delete": function(){
+          Clients.remove(this._id);
+      }
+    });
+
+  Template.providers.events({
+      'click .mainMenu': function(){
+          Router.go('main');
+      }
+    });
 
   Template.separate.events({
-      'click .mainMenu': function(event){
+      'click .mainMenu': function(){
           Router.go('main');
       }
     });
 
   Template.calendary.events({
-      'click .left': function(event){
+      'click .left': function(){
           Router.go('main');
       }
     });
 
   Template.home.events({
-      'click .loginbutton': function(event){
+      'click .loginbutton': function(){
           Router.go('main');
       }
     });
 
   Template.main.events({
-      'click .calendar': function(event){
+      'click .calendar': function(){
           Router.go('calendary');
       }
     });
 
   Template.main.events({
-      'click .providers': function(event){
+      'click .providers': function(){
           Router.go('providers');
       }
     });
 
   Template.main.events({
-        'click .separate': function(event){
+        'click .separate': function(){
             Router.go('separate');
-      }
-    });
+        }
+      });
 
   Template.main.events({
-        'click .client': function(event){
+        'click .client': function(){
             Router.go('client');
-      }
-    });
+        }
+      });
 
   Template.client.events({
-        'click .mainMenu': function(event){
+        'click .mainMenu': function(){
             Router.go('main');
-      }
-    });
-
-  Template.client.events({
-        'click .delete': function(event){
-            Clients.remove(this._id);
-      }
-    });
+        }
+      });
 
 
   //Helpers1
@@ -142,21 +140,6 @@ if (Meteor.isClient) {
   });
 
   Meteor.subscribe('theProviders');
-  Meteor.subscribe('theTasks');
   Meteor.subscribe('theClients');
-
-
-
-  // SuperCalendar.events.onEventClick = function (event, template, data) {
-  //   console.log(data.date);
-  //   // console.log(Meteor.Collection("calendar")):
-  //   var eventDay = data.date;
-  //   var name = document.getElementById('name').value;
-  //   $('#name').val(eventDay.title);
-  //
-  //   Template.calendary.name = function(){
-  //     return dynamicId;
-  //   };
-  // };
 
 }
