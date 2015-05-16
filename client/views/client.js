@@ -82,15 +82,18 @@ if (Meteor.isClient) {
         }
       });
 
+  Template.main.events({
+        'click .client': function(event){
+            Router.go('client');
+        }
+      });
 
-  //Helpers
+  //Helpers1
   Template.providers.helpers({
       providers: function(){
           return Providers.find({});
       }
     });
-
-    console.log(Calendar.find({}));
 
   Template.separate.helpers({
       calendar: function(){
