@@ -1,0 +1,36 @@
+<template name="client">
+  <button class="left mainMenu inputText">Regresar</button>
+
+    <div class="container">
+      <h1>Clientes</h1>
+      <br>
+      <table class="table table-striped">
+        <tr>
+          <td><h4>Nombre</h4></td>
+          <td><h4>Correo</h4></td>
+          <td><h4>Direccion</h4></td>
+          <td><h4>Telefono</h4></td>
+          <td><h3></h3></td>
+        </tr>
+        {{#each clients}}
+          <tr>
+            <td>{{name}}</td>
+            <td>{{email}}</td>
+            <td>{{address}}</td>
+            <td>{{phone}}</td>
+            <td><button class="delete inputText">Borrar</button></td>
+          </tr>
+        {{/each}}
+      </table>
+      <div id="loginform">
+        <h3>Ingresa los datos del cliente</h3>
+        <input type="text" id="name" class="input" placeholder="nombre" >
+        <input type="text" id="email" class="input" placeholder="correo" >
+        <input type="text" id="address" class="input" placeholder="direccion" >
+        <input type="text" id="phone" class="input" placeholder="telefono" >
+        <input type="submit" class="loginbutton" value="Guardar" />
+      </div>
+    </div>
+
+
+</template>

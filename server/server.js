@@ -8,4 +8,8 @@ if (Meteor.isServer) {
     return Providers.find();
   });
 
+  Meteor.publish('theClients', function () {
+    return Clients.find();
+  });
+
 }

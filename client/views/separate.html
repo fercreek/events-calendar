@@ -1,0 +1,25 @@
+<template name="separate">
+  <button class="left mainMenu inputText">Regresar</button>
+  <div class="container">
+    <h1>Formato de separado</h1>
+    <br>
+    <table class="table table-striped">
+      <tr>
+        <td><h4>Evento</h4></td>
+        <td><h4>Fecha</h4></td>
+        <td><h4>Descripcion</h4></td>
+        <td><h3></h3></td>
+        <td><h3></h3></td>
+      </tr>
+      {{#each calendar}}
+        <tr>
+          <td>{{title}}</td>
+          <td>{{start}}</td>
+          <td>{{description}}</td>
+          <td><button class="edit inputText">Editar</button></td>
+          <td><button class="delete inputText">Borrar</button></td>
+        </tr>
+      {{/each}}
+    </table>
+  </div>
+</template>
