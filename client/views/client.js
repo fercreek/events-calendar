@@ -81,7 +81,13 @@ if (Meteor.isClient) {
 
   Template.home.events({
       'click .loginbutton': function(){
-          Router.go('main');
+          var email = document.getElementById('email').value;
+          var password = document.getElementById('password').value;
+          if (email == 'admin@admin.com' && password == 'admin'){
+            Router.go('main');
+          } else {
+            alert('Usuario o contraseña incorrecta');
+          }
       }
     });
 
