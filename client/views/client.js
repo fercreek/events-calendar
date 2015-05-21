@@ -25,6 +25,12 @@ if (Meteor.isClient) {
     }
   });
 
+  Template.separate.events({
+      "click .borrarEventos" : function(){
+        Calendar.remove(this._id);
+      }
+  });
+
   Template.client.events({
     "click .loginbutton": function () {
       var name = document.getElementById('name').value;
@@ -50,7 +56,7 @@ if (Meteor.isClient) {
     });
 
   Template.separate.events({
-      "click .delete": function(){
+      "click .borrarEventos ": function(){
           Providers.remove(this._id);
       }
     });
@@ -78,6 +84,12 @@ if (Meteor.isClient) {
           Router.go('main');
       }
     });
+
+  Template.main.events({
+      'click .salir': function(){
+          Router.go('home');
+      }
+  });
 
   Template.home.events({
       'click .loginbutton': function(){
