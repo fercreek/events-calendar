@@ -12,3 +12,5 @@ mrt:bootstrap-3
 mizzao:bootstrap-3
 less
 nemo64:bootstrap
+mizzao:bootboxjs
+jquery
