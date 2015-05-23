@@ -21,23 +21,26 @@
           <td>{{title}}</td>
           <td>{{formatDate start}}</td>
           <td>{{description}}</td>
-          <td>
-            <select>
-              <option value="Cliente">Selecciona un cliente</option>
-              {{#each clientName}}
-                <option value="{{name}}">{{name}}</option>
+            <td>
+              <p>
+                Cliente seleccionado: {{client}}
+              </p>
+              <select onchange="work(this.value);">
+                <option value="Cliente">Selecciona un cliente</option>
+                {{#each clientName}}
+                  <option id="client" value="{{name}}">{{name}}</option>
+                {{/each}}
+              </select>
+            </td>
+            <td>
+              {{#each providersName}}
+                <input type="checkbox" value="{{name}}">{{name}}, {{work}}<br>
               {{/each}}
-            </select>
-          </td>
-          <td>
-            {{#each providersName}}
-              <input type="checkbox" value="{{name}}">{{name}}, {{work}}<br>
-            {{/each}}
-          </td>
-
-          <td><button class="edit inputText">Editar</button></td>
+            </td>
+          <td><button class="edit inputText">Guardar</button></td>
           <td><button class="borrarEventos delete inputText">Borrar</button></td>
         </tr>
+
       {{/each}}
 
 
