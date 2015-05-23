@@ -8,6 +8,7 @@
         <td><h4>Evento</h4></td>
         <td><h4>Fecha</h4></td>
         <td><h4>Descripcion</h4></td>
+        <td><h4>Lugar</h4></td>
         <td><h4>Cliente</h4></td>
         <td><h4>Proveedores</h4></td>
 
@@ -21,29 +22,47 @@
           <td>{{title}}</td>
           <td>{{formatDate start}}</td>
           <td>{{description}}</td>
-            <td>
-              <p>
-                Cliente seleccionado: {{client}}
-              </p>
-              <select onchange="work(this.value);">
-                <option value="Cliente">Selecciona un cliente</option>
-                {{#each clientName}}
-                  <option id="client" value="{{name}}">{{name}}</option>
-                {{/each}}
-              </select>
-            </td>
-            <td>
-              {{#each providersName}}
-                <input type="checkbox" value="{{name}}">{{name}}, {{work}}<br>
+          <td>asdasd</td>
+          <td>
+            <p>
+              Cliente seleccionado: {{client}}
+            </p>
+            <select onchange="work(this.value);">
+              <option value="Cliente">Selecciona un cliente</option>
+              {{#each clientName}}
+                <option id="client" value="{{name}}">{{name}}</option>
               {{/each}}
-            </td>
+            </select>
+          </td>
+          <td>
+            <p>
+              Proveedores: {{provider}}
+            </p>
+            {{#each providersName}}
+              <input type="checkbox" class="prov" value="{{name}}" >{{name}}, {{work}}<br>
+            {{/each}}
+          </td>
           <td><button class="edit inputText">Guardar</button></td>
           <td><button class="borrarEventos delete inputText">Borrar</button></td>
         </tr>
-
       {{/each}}
 
 
     </table>
   </div>
+
+  <script>
+      provid = [];
+
+      $(".prov").change(function() {
+        console.log(this);
+
+        if (this.checked){
+          provid.push(this.value);
+        } else {
+          var index = provid.indexOf(this.value);
+          provid.splice(index, 1);
+        }
+      });
+  </script>
 </template>
